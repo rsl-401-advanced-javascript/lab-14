@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+  - "stable"
+sudo: required
+before_script:
+  - npm install jest
+script:
+  - npm test
+branches:
+  only:
+    - master
+services:
+  - mongodb
+env:
+  - MONGODB_URI="mongodb://localhost/auth-server"
+notifications:
+  email:
+    - false
